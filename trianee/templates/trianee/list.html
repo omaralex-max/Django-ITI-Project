@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trainee List</title>
+</head>
+<body>
+<h1>Trainee List</h1>
+
+<table border="1" width="100%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    {% for trianee in trinees %}
+    <tr>
+        <td>{{ trianee.id }}</td>
+        <td>{{ trianee.name }}</td>
+        <td>
+            <a href="{% url 'trianee:update' trianee.id %}">Update</a>
+            <a href="{% url 'trianee:delete' trianee.id %}">Delete</a>
+            <a href="{% url 'trianee:details' trianee.id %}">Show Details</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

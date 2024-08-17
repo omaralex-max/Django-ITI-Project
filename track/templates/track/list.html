@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tracks - List</title>
+</head>
+<body>
+<h1>Track List</h1>
+
+<table border="1" width="100%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    {% for track in tracks %}
+    <tr>
+        <td>{{ track.id }}</td>
+        <td>{{ track.name }}</td>
+        <td>
+            <a href="{% url 'track:update' track.id %}">Update</a>
+            <a href="{% url 'track:delete' track.id %}">Delete</a>
+            <a href="{% url 'track:details' track.id %}">Show Details</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

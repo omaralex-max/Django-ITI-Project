@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accounts - List</title>
+</head>
+<body>
+<h1>Account List</h1>
+
+<table border="1" width="100%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    {% for account in accounts %}
+    <tr>
+        <td>{{ account.id }}</td>
+        <td>{{ account.name }}</td>
+        <td>
+            <a href="{% url 'account:update' account.id %}">Update</a>
+            <a href="{% url 'account:delete' account.id %}">Delete</a>
+            <a href="{% url 'account:details' account.id %}">Show Details</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
