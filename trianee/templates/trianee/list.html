@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Trainee List</title>
-</head>
-<body>
-<h1>Trainee List</h1>
 
+{% extends 'base.html' %}
+
+{% block title %}
+    Account - List
+{% endblock %}
+
+{%block 'content'%}
+<h1>Trianees list</h1>
 <table border="1" width="100%">
     <tr>
         <th>ID</th>
@@ -25,5 +25,10 @@
     </tr>
     {% endfor %}
 </table>
-</body>
-</html>
+{% endblock %}
+
+{% block js %}
+    <script>
+        console.log('Child Page JS');
+    </script>
+{% endblock %}

@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Accounts - List</title>
-</head>
-<body>
-<h1>Account List</h1>
+{% extends 'base.html' %}
 
+{% block title %}
+    Account - List
+{% endblock %}
+
+{%block 'content'%}
+<h1>Acount list</h1>
 <table border="1" width="100%">
     <tr>
         <th>ID</th>
@@ -25,5 +24,10 @@
     </tr>
     {% endfor %}
 </table>
-</body>
-</html>
+<br>
+<a href="{%url 'account:create'%}">Add Account</a>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

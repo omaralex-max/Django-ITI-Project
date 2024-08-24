@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Account - Details
+{% endblock %}
+
+{%block 'content'%}
+<h1>Acount Details {{id}}</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Track ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ account.id }}</td>
+            <td>{{ account.name }}</td>
+            <td>{{ account.email }}</td>
+            <td>{{ account.phone }}</td>
+            <td>{{ account.address }}</td>
+            <td>{{ account.trackid }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
+
+{% block js %}
+    <script>
+        console.log('Child Page JS');
+    </script>
+{% endblock %}
