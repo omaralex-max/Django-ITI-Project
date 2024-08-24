@@ -27,12 +27,13 @@
     </div>
     <div class="form-group">
         <label for="trackid">Track ID:</label>
-        <select name="accounttrack">
+        <select name="trackid" id="trackid" class="form-control">
             {% for track in tracks %}
             <option value="{{ track.id }}">{{ track.title }}</option>
-        {% endfor %}
+            {% endfor %}
         </select>
     </div>
+    
     <div class="form-group">
         <label for="password">Password:</label required>
         <input class="form-control" type="password" name="password">

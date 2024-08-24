@@ -7,18 +7,19 @@ def account_create(request):
     context = {}
 
     if request.method == "POST":
-        
-        if (len(request.POST['name'])>0 and len(request.POST['name'])<=300):
-          accountobj = Account()
-          accountobj.name = request.POST['name']
-          accountobj.email = request.POST['email']
-          accountobj.phone = request.POST['phone']
-          accountobj.address = request.POST['address']
-          accountobj.password = request.POST['password']
-          accountobj.trackobj=Track.objects.get(pk=request.POST['trackid'])
-          accountobj.save()
-        else:
-          context['error_message'] = 'Invalid name length!'
+      print(request.POST.keys())  # Debugging line to print all POST keys
+      if (len(request.POST['name']) > 0 and len(request.POST['name']) <= 300):
+        accountobj = Account()
+        accountobj.name = request.POST['name']
+        accountobj.email = request.POST['email']
+        accountobj.phone = request.POST['phone']
+        accountobj.address = request.POST['address']
+        accountobj.password = request.POST['password']
+        accountobj.trackobj = Track.objects.get(pk=request.POST['trackid'])
+        accountobj.save()
+    else:
+        context['error_message'] = 'Invalid name length!'
+
     
     context['tracks'] = Track.objects.all()
 
