@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Trianee - Details
+{% endblock %}
+
+{%block 'content'%}
+<h1>Trianee Details {{id}}</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Track ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ trianee.id }}</td>
+            <td><img src="{{ trianee.getimages }}" alt=""></td>
+            <td>{{ trianee.name }}</td>
+            <td>{{ trianee.trackid }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
+
+{% block js %}
+    <script>
+        console.log('Child Page JS');
+    </script>
+{% endblock %}

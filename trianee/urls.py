@@ -5,6 +5,7 @@ app_name = 'trianee'
 
 urlpatterns = [
     path('create/', views.trianee_create, name='create'),
+    path('createForm/', views.trianee_create_form, name='create_form'),
     path('update/<int:id>/', views.trianee_update, name='update'),
     path('delete/<int:id>/', views.trianee_delete, name='delete'),
     path('list/', views.list_trianee, name='list'),

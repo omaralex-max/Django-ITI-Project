@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Account - List
+    Trianee - List
 {% endblock %}
 
 {%block 'content'%}
@@ -10,12 +10,14 @@
 <table border="1" width="100%">
     <tr>
         <th>ID</th>
+        <th>Image</th>
         <th>Name</th>
         <th>Actions</th>
     </tr>
-    {% for trianee in trinees %}
+    {% for trianee in trianees %}
     <tr>
         <td>{{ trianee.id }}</td>
+        <td>{{ trianee.image }}</td>
         <td>{{ trianee.name }}</td>
         <td>
             <a href="{% url 'trianee:update' trianee.id %}">Update</a>
@@ -25,6 +27,10 @@
     </tr>
     {% endfor %}
 </table>
+<a href="{%url 'trianee:create'%}">Add Trianee</a>
+<br>
+<a href="{% url 'trianee:create_form' %}">Add Trianee by form</a>
+
 {% endblock %}
 
 {% block js %}
