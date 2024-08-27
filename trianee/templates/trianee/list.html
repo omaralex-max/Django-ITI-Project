@@ -24,12 +24,14 @@
             <a href="{% url 'trianee:delete' trianee.id %}">Delete</a>
             <a href="{% url 'trianee:details' trianee.id %}">Show Details</a>
         </td>
-    </tr>
+    </tr> 
     {% endfor %}
 </table>
 <a href="{%url 'trianee:create'%}">Add Trianee</a>
 <br>
 <a href="{% url 'trianee:create_form' %}">Add Trianee by form</a>
+<br>
+<a href="{% url 'trianee:create_form_model' %}">Add Trianee by form model</a>
 
 {% endblock %}
 

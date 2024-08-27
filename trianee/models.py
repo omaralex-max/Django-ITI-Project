@@ -21,12 +21,7 @@ class Trainee(models.Model):
     def getimages(self):
         return f'/media/{self.image}'
     @classmethod
-    def create(cls,name,image,trackid): 
-        trianeeobj = Trainee()
-        trianeeobj.name = name
-        trianeeobj.image = image
-        trianeeobj.trackobj = Track.objects.get(pk=trackid)
+    def create(cls, name, image, track):
+        trianeeobj = cls(name=name, image=image, trackobj=Track.objects.get(pk=track))
         trianeeobj.save()
-        return redirect(cls.get_list_url())
-    
-    
+        return trianeeobj 

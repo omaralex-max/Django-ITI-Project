@@ -12,15 +12,15 @@
             <th>ID</th>
             <th>Image</th>
             <th>Name</th>
-            <th>Track ID</th>
+            <th>Track</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>{{ trianee.id }}</td>
-            <td><img src="{{ trianee.getimages }}" alt=""></td>
+            <td><img src="{{ trianee.getimages.url }}" alt="Trainee Image"></td>
             <td>{{ trianee.name }}</td>
-            <td>{{ trianee.trackid }}</td>
+            <td>{{ trainee.trackobj.title }}</td> 
         </tr>
     </tbody>
 </table>

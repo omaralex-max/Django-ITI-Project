@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'track.apps.TrackConfig',
     'trianee.apps.TrianeeConfig',
+    'crispy_forms',
+    'crispy_bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -127,8 +129,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = [BASE_DIR /'media']
-
+MEDIA_ROOT = BASE_DIR / 'media'  # Ensure this is a single path, not a list
 
 
 # Default primary key field type

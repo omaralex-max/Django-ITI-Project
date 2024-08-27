@@ -176,7 +176,6 @@ append path ---url:port/static-->
 					</div>
 					<ul class="nav">
 						<li class="nav-item active">
-							<a href="{%url 'home'%}">
 								<i class="la la-home"></i>
 								<p>Home</p>
 								<span class="badge badge-count">5</span>
@@ -244,7 +243,8 @@ append path ---url:port/static-->
 						</nav>
 						<div class="copyright ml-auto">
                             {%block 'content'%}
-                            {%endblock%}
+							<a href="{% url 'login' %}"> LogIn</a>
+							<a href="{% url 'register' %}">Register</a>                            {%endblock%}
 
 
 

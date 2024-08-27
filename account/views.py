@@ -4,7 +4,9 @@ from .models import *
 from track.models import *
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required 
 
+@login_required() 
 def account_create(request):
     
     context = {}

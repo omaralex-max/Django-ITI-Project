@@ -1,38 +1,40 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Account - Update
+    trianee - Update
 {% endblock %}
 
 {%block 'content'%}
-<h1>Acount Update {{id}}</h1>
+<h1>Trainee Update: {{ trianee.id }}</h1>
 
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" name="name" value="{{trianee.name}}" required>
+        <input type="text" class="form-control" id="name" name="name" value="{{ trianee.name }}" required>
     </div>
     <div class="form-group">
         <label for="image">Image:</label>
         <input type="file" class="form-control" id="image" name="image">
     </div>
-   
-
     <div class="form-group">
         <label for="trackid">Track ID:</label>
-        <select name="trackid" id="trackid" class="form-control">
+        <select name="trackobj" id="trackid" class="form-control">
             {% for track in tracks %}
-                <option value="{{ track.id }}" {% if track.id == account.trackobj.id %}selected{% endif %}>{{ track.title }}</option>
+                <option value="{{ track.id }}" {% if track.id == trianee.trackobj.id %}selected{% endif %}>{{ track.title }}</option>
             {% endfor %}
         </select>
     </div>
-    
+    <button type="submit" class="btn btn-primary">Update Trainee</button>
+    <a class="btn btn-secondary" href="{% url 'trianee:list' %}">Back</a>
+</form>
+
+<div style="color: red;">
+    {{ error_message }}
+</div>
    
     
       
-    <button type="submit" class="btn btn-primary" value="Add" >Update Trianee</button>
-    <button type="submit" class="btn btn-primary" value="Add" ><a style="text-decoration: none; color: white;" href="{%url 'trianee:list'%}">Back</a></button>
 
     
 </form>

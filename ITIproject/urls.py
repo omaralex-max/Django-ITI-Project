@@ -16,15 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from . import views 
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('', views.home_view, name='home'),  
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
     path('track/', include('track.urls')),
     path('trianee/', include('trianee.urls')),
-
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    # path('register/', myapp_views.RegisterView.as_view(), name='register'),  # Replace with your actual register view
+    path('accounts/profile/', auth_views.TemplateView.as_view(template_name='profile.html'), name='profile'),  # Replace with your profile view
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
